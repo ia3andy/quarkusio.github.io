@@ -6,6 +6,22 @@ These instructions will get you a copy of the Quarkus.io website up and running 
 
 ### Installation
 
+#### Using Docker
+
+1. Install [Docker Desktop](https://docs.docker.com/install/).
+2. Fork the [project repository](https://github.com/quarkusio/quarkusio.github.io), then clone your fork.
+
+        git clone git@github.com:YOUR_USER_NAME/quarkusio.github.io.git
+
+3. Change into the project directory:
+
+        cd quarkusio.github.io
+4. Run Docker Composer
+
+        docker-compose up
+
+5. Now browse to http://localhost:4000
+#### Using a local Ruby environment
 [Jekyll static site generator docs](https://jekyllrb.com/docs/).
 
 1. Install a full [Ruby development environment](https://jekyllrb.com/docs/installation/). If you use `rvm`, run: `rvm use 2.7.1`.
@@ -27,7 +43,12 @@ These instructions will get you a copy of the Quarkus.io website up and running 
 
 6. Build the site and make it available on a local server
   
-        bundle exec jekyll serve
+        ./serve.sh
+
+   Or if you want it faster and okay to not have guides included use the following:
+
+        ./serve-noguides.sh
+
 
 7. Now browse to http://localhost:4000
 
@@ -48,9 +69,10 @@ If for some reason you need to deploy from your local machine, follow these inst
 To write a blog:
 
 - create an author entry in [_data/authors.yaml](https://github.com/quarkusio/quarkusio.github.io/blob/develop/_data/authors.yaml)
-  - `emailhash` you can get by running `echo your@email.org | md5` using an email you have registered from the [Gravatar service](https://gravatar.com),
+  - `emailhash` you can get by running `echo -n your@email.org | md5sum` on Linux or `echo -n your@email.org | md5` on macOS using an email you have registered from the [Gravatar service](https://gravatar.com),
+     
 - create an blog entry under [_posts](https://github.com/quarkusio/quarkusio.github.io/tree/develop/_posts)
-  - the file name is `yyyy-mm-dd-slug.adoc`
+  - the file name is `yyyy-mm-dd-slug.adoc` Set the date to the same value in the asciidoc preamble.
 - `tags` should be used with some care as an archive page is created for of them. Below are some basic rules to try follow:
   - `quarkus-release` used for Quarkus release blogs
   - `announcement` used for general announcement with some impact.
@@ -61,8 +83,35 @@ To write a blog:
   - tags is space separated list `tags:extension grpc`
   - tags must be in lowercase
 - it's in asciidoc format, there is an example as shown with [2019-06-05-quarkus-and-web-ui-development-mode.adoc](https://github.com/quarkusio/quarkusio.github.io/blob/develop/_posts/2019-06-05-quarkus-and-web-ui-development-mode.adoc)
-  - Be aware that the `date` attribute in the asciidoc preamble defines when the article will be published. Use a present date while writing your article to test locally, then switch to the actual target date before submitting. 
+  - Be aware that the `date` attribute in the asciidoc preamble defines when the article will be published. Add a `--future` flag when testing locally to ensure the article is included in the generated site. 
 - send a pull request against the develop branch and voilà
+
+## Translations/Localization (l10n)
+
+The primary site (quarkus.io) is written in English. 
+
+There are separate repositories for community driven localized versions of quarkus.io:
+
+- [ja.quarkus.io](https://github.com/quarkusio/ja.quarkus.io) for Japanese
+- [cn.quarkus.io](https://github.com/quarkusio/cn.quarkus.io) for Chinese (simplified)
+- [es.quarkus.io](https://github.com/quarkusio/es.quarkus.io) for Spanish
+- [pt.quarkus.io](https://github.com/quarkusio/pt.quarkus.io) for Brazilian Portuguese
+
+If you want to contribute to those efforts read the README in those projects. If you would like to
+start another translation, please open an issue in this main repo.
+
+#### Enable DNS for l10n site
+
+Once a localized site has enough of its content translated, DNS needs to be enabled. To do that get one of the Red Hat admins to submit
+a ticket to IT asking for XX domain:
+
+```
+We need a CNAME record set up for XX.quarkus.io to have it serve out GitHub pages. 
+
+The CNAME record for XX.quarkus.io should point to "quarkusio.github.io.".
+```
+
+See Step 5 on https://docs.github.com/en/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site for more information.
 
 ## Contributing
 

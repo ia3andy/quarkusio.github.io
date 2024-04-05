@@ -6,10 +6,11 @@
 
 
 <head>
-  <title>Quarkus - Deploying to Google Cloud Platform (GCP) - main</title>
+  <title>Deploying to Google Cloud Platform (GCP) - main - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
+  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net https://analytics.ossupstream.org https://search.quarkus.io/; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app https://analytics.ossupstream.org; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self'
+  https://analytics.ossupstream.org *; media-src 'self'; frame-src  https://www.youtube.com https://embed.restream.io https://app.mailjet.com http://xy0p2.mjt.lu https://mj.quarkus.io https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
   <script id="adobe_dtm" src="https://www.redhat.com/dtm.js" type="text/javascript"></script>
   <script src="/assets/javascript/highlight.pack.js" type="text/javascript"></script>
   <META HTTP-EQUIV='X-XSS-Protection' CONTENT="1; mode=block">
@@ -31,31 +32,42 @@
   <link rel="stylesheet" href="/assets/css/main.css?2021-07-29" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
   <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Quarkus">
-  <script src="/assets/javascript/goan.js" type="text/javascript"></script>
   <script src="/assets/javascript/hl.js" type="text/javascript"></script>
+  
+  
+  
+  
+  <link rel="alternate" hreflang="en" href="https://quarkus.io/version/main/guides/deploying-to-google-cloud" />
+  
+  <link rel="alternate" hreflang="pt-br" href="https://pt.quarkus.io/version/main/guides/deploying-to-google-cloud" />
+  
+  <link rel="alternate" hreflang="es" href="https://es.quarkus.io/version/main/guides/deploying-to-google-cloud" />
+  
+  <link rel="alternate" hreflang="zh" href="https://cn.quarkus.io/version/main/guides/deploying-to-google-cloud" />
+  
+  <link rel="alternate" hreflang="ja" href="https://ja.quarkus.io/version/main/guides/deploying-to-google-cloud" />
+  
+  <link rel="alternate" hreflang="x-default" href="https://quarkus.io/" />  
+  <script src="/assets/javascript/tracking.js"></script>
 </head>
 
 <body class="guides">
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJWS5L"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
+  
   <div class="nav-wrapper">
   <div class="grid-wrapper">
     <div class="width-12-12">
       <input type="checkbox" id="checkbox" />
       <nav id="main-nav" class="main-nav">
-  <div class="container">
-    <div class="logo-wrapper">
-        <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
-    </div>
+        <div class="logo-wrapper">
+           <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
+        </div>
     <label class="nav-toggle" for="checkbox">
       <i class="fa fa-bars"></i>
     </label>
     <ul id="menu" class="menu">
       <li class="dropdown">
-        <span href="/about/">About <i class="fas fa-chevron-down"></i></span>
+        <span href="/about/">Why<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/about" class="">WHAT IS QUARKUS?</a></li>
           <li><a href="/container-first" class="">CONTAINER FIRST</a></li>
@@ -66,16 +78,26 @@
         </ul>
       </li>
       <li class="dropdown">
-        <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
+        <span href="/learn/">Learn<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
       </li>
       <li class="dropdown">
-        <span href="/learn/">Community <i class="fas fa-chevron-down"></i></span>
+        <span href="https://quarkus.io/extensions/">Extensions<i class="fas fa-chevron-down"></i></span>
+        <ul class="submenu">
+          <!-- Note that quarkus.io is hardcoded here, because it is the only url which supports extensions -->
+          <li><a href="https://quarkus.io/extensions/" class="">BROWSE EXTENSIONS</a></li>
+          <li><a href="/faq/#what-is-a-quarkus-extension" class="">USE EXTENSIONS</a></li>
+          <li><a href="/guides/writing-extensions" class="">CREATE EXTENSIONS</a></li>
+          <li><a href="https://hub.quarkiverse.io" class="">SHARE EXTENSIONS</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <span href="/community/">Community<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/support/" class="">SUPPORT</a></li>
           <li><a href="/blog" class="">BLOG</a></li>
@@ -83,15 +105,23 @@
           <li><a href="/insights" class="">PODCAST</a></li>
           <li><a href="/events" class="">EVENTS</a></li>
           <li><a href="/newsletter" class="">NEWSLETTER</a></li>
-          <li><a href="/publications" class="">PUBLICATIONS</a></li>
-          <li><a href="/awards" class="">AWARDS</a></li>
+          <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" class="">ROADMAP</a></li>
           </ul>
       </li>
       <li>
-        <a href="https://code.quarkus.io" class="button-cta secondary white">Start Coding</a>
+        <a href="https://code.quarkus.io" class="button-cta secondary white">START CODING</a>
+      </li>
+      <li class="dropdown">
+        <span href="/language/"><div class="fas fa-globe langicon"></div><i class="fas fa-chevron-down"></i></span>
+        <ul class="submenu">
+          <li><a href="https://quarkus.io/version/main/guides/deploying-to-google-cloud" >OFFICIAL (ENGLISH)</a></li>
+          <li><a href="https://pt.quarkus.io/version/main/guides/deploying-to-google-cloud">PORTUGUÊS (BR)</a></li>
+          <li><a href="https://es.quarkus.io/version/main/guides/deploying-to-google-cloud">ESPAÑOL</a></li>
+          <li><a href="https://cn.quarkus.io/version/main/guides/deploying-to-google-cloud">简体中文</a></li>
+          <li><a href="https://ja.quarkus.io/version/main/guides/deploying-to-google-cloud">日本語</a></li>
+          </ul>
       </li>
     </ul>
-  </div>
       </nav>
     </div>
   </div>
@@ -102,85 +132,55 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/version/main/guides/"> Back to Guides</a></p>
+
+
+<section class="full-width-version-bg flexfilterbar guides">
+  <div class="guideflexcontainer">
+    <div class="docslink">
+      <a class="returnlink" href="/version/main/guides/"> Back to Guides</a>
     </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+    <div class="flexlabel">
+      <label>By Version</label>
+    </div>
+    <div class="guidepulldown version">
+    <select id="guide-version-dropdown">
       
         
         
-        
-        
-          
         <option value="main" selected>Main - SNAPSHOT</option>
         
         
-      
+        
+        <option value="latest" >3.9.2 - Latest</option>
         
         
         
-        
-          
-        <option value="latest" >2.7 - Latest</option>
-        
-        
-      
+        <option value="3.8" >3.8</option>
         
         
         
-        
-          
-        <option value="2.2" >2.2</option>
-        
-        
-      
+        <option value="3.2" >3.2</option>
         
         
         
-        
-          
-        <option value="1.11" >1.11</option>
+        <option value="2.16" >2.16</option>
         
         
-      
-    
-      </select>
+        
+        <option value="2.13" >2.13</option>
+        
+        
+        
+        <option value="2.7" >2.7</option>
+        </select>
     </div>
   </div>
-</div>
+</section>
 
-<div class="grid-wrapper guide">
-  <div class="grid__item width-12-12 width-12-12-mobile">
-    <h1 class="text-caps">Deploying to Google Cloud Platform (GCP) </h1>
-  </div>
-  <div class="width-12-12">
-    <div class="hide-mobile toc"><ul class="sectlevel1">
-<li><a href="#prerequisites">Prerequisites</a></li>
-<li><a href="#login-to-google-cloud">Login to Google Cloud</a></li>
-<li><a href="#deploying-to-google-cloud-functions">Deploying to Google Cloud Functions</a></li>
-<li><a href="#deploying-to-google-app-engine-standard">Deploying to Google App Engine Standard</a>
-<ul class="sectlevel2">
-<li><a href="#building-the-application-manually">Building the application manually</a></li>
-<li><a href="#building-the-application-via-gcloud">Building the application via gcloud</a></li>
-<li><a href="#building-the-application-via-the-google-cloud-maven-plugin">Building the application via the Google Cloud Maven plugin</a></li>
-</ul>
-</li>
-<li><a href="#deploying-to-google-app-engine-flexible-custom-runtimes">Deploying to Google App Engine Flexible Custom Runtimes</a></li>
-<li><a href="#deploying-to-google-cloud-run">Deploying to Google Cloud Run</a></li>
-<li><a href="#using-cloud-sql">Using Cloud SQL</a>
-<ul class="sectlevel2">
-<li><a href="#using-cloud-sql-with-a-jdbc-driver">Using Cloud SQL with a JDBC driver</a></li>
-<li><a href="#using-cloud-sql-with-a-reactive-sql-client">Using Cloud SQL with a reactive SQL client</a></li>
-</ul>
-</li>
-<li><a href="#going-further">Going further</a></li>
-</ul></div>
-    <div>
+<div class="guide">
+  <div class="grid-wrapper">
+    <div class="grid__item width-8-12 width-12-12-m">
+      <h1 class="text-caps">Deploying to Google Cloud Platform (GCP) </h1>
       <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
@@ -225,10 +225,10 @@
 <p>An IDE</p>
 </li>
 <li>
-<p>JDK 11+ installed with <code>JAVA_HOME</code> configured appropriately</p>
+<p>JDK 17+ installed with <code>JAVA_HOME</code> configured appropriately</p>
 </li>
 <li>
-<p>Apache Maven 3.6.2+</p>
+<p>Apache Maven 3.9.6</p>
 </li>
 <li>
 <p>Optionally the <a href="cli-tooling">Quarkus CLI</a> if you want to use it</p>
@@ -245,8 +245,8 @@
 <p>This guide will take as input an application developed in the <a href="getting-started">Getting Started guide</a>.</p>
 </div>
 <div class="paragraph">
-<p>Make sure you have the getting-started application at hand, or clone the Git repository: <code>git clone <a href="https://github.com/quarkusio/quarkus-quickstarts.git" class="bare">https://github.com/quarkusio/quarkus-quickstarts.git</a></code>,
-or download an <a href="https://github.com/quarkusio/quarkus-quickstarts/archive/main.zip">archive</a>. The solution is located in the <code>getting-started</code> directory.</p>
+<p>Make sure you have the getting-started application at hand, or clone the Git repository: <code>git clone -b development <a href="https://github.com/quarkusio/quarkus-quickstarts.git" class="bare">https://github.com/quarkusio/quarkus-quickstarts.git</a></code>,
+or download an <a href="https://github.com/quarkusio/quarkus-quickstarts/archive/development.zip">archive</a>. The solution is located in the <code>getting-started</code> directory.</p>
 </div>
 </div>
 </div>
@@ -254,7 +254,7 @@ or download an <a href="https://github.com/quarkusio/quarkus-quickstarts/archive
 <h2 id="login-to-google-cloud"><a class="anchor" href="#login-to-google-cloud"></a>Login to Google Cloud</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Login to Google Cloud is necessary for deploying the application and it can be done as follows:</p>
+<p>Login to Google Cloud is necessary for deploying the application. It can be done as follows:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -275,7 +275,7 @@ or download an <a href="https://github.com/quarkusio/quarkus-quickstarts/archive
 <p><a href="gcp-functions">Google Cloud Functions</a>: Build functions using the Google Cloud Functions API.</p>
 </li>
 <li>
-<p><a href="gcp-functions-http">Google Cloud Functions HTTP binding</a>: Build functions using Quarkus HTTP APIs: RESTEasy (JAX-RS),
+<p><a href="gcp-functions-http">Google Cloud Functions HTTP binding</a>: Build functions using Quarkus HTTP APIs: Quarkus REST (formerly RESTEasy Reactive, our Jakarta REST implementation),
 Undertow (Servlet), Vert.x Web, or <a href="funqy-http">Funqy HTTP</a>.</p>
 </li>
 <li>
@@ -293,10 +293,7 @@ follow the specific guides for more information on how to develop, package and d
 <h2 id="deploying-to-google-app-engine-standard"><a class="anchor" href="#deploying-to-google-app-engine-standard"></a>Deploying to Google App Engine Standard</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>We will only cover the Java 11 runtime as the Java 8 runtime uses its own Servlet engine which is not compatible with Quarkus.</p>
-</div>
-<div class="paragraph">
-<p>First of all, make sure to have an App Engine environment initialized for your Google Cloud project, if not, initialize one via <code>gcloud app create --project=[YOUR_PROJECT_ID]</code>.</p>
+<p>First, make sure to have an App Engine environment initialized for your Google Cloud project, if not, initialize one via <code>gcloud app create --project=[YOUR_PROJECT_ID]</code>.</p>
 </div>
 <div class="paragraph">
 <p>Then, you will need to create a <code>src/main/appengine/app.yaml</code> file, let&#8217;s keep it minimalistic with only the selected engine:</p>
@@ -309,12 +306,26 @@ follow the specific guides for more information on how to develop, package and d
 <div class="paragraph">
 <p>This will create a default service for your App Engine application.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can also use the new Java 17 runtime by defining <code>runtime: java17</code> instead.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>App Engine Standard does not support the default Quarkus' specific packaging layout, therefore, you must set up your application to be packaged as an uber-jar via your <code>application.properties</code> file:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">quarkus.package.type=uber-jar</code></pre>
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">quarkus.package.jar.type=uber-jar</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -366,7 +377,7 @@ package your JAR via Maven (or Gradle) and launch it on App Engine.</p>
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;plugin&gt;
     &lt;groupId&gt;com.google.cloud.tools&lt;/groupId&gt;
     &lt;artifactId&gt;appengine-maven-plugin&lt;/artifactId&gt;
-    &lt;version&gt;2.4.0&lt;/version&gt;
+    &lt;version&gt;2.4.4&lt;/version&gt;
     &lt;configuration&gt;
         &lt;projectId&gt;GCLOUD_CONFIG&lt;/projectId&gt; <i class="conum" data-value="1"></i><b>(1)</b>
         &lt;version&gt;gettingstarted&lt;/version&gt;
@@ -375,15 +386,17 @@ package your JAR via Maven (or Gradle) and launch it on App Engine.</p>
 &lt;/plugin&gt;</code></pre>
 </div>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Use the default <code>gcloud</code> configuration</p>
-</li>
-<li>
-<p>Override the default JAR name to the one generated by the Quarkus Maven plugin</p>
-</li>
-</ol>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Use the default <code>gcloud</code> configuration</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Override the default JAR name to the one generated by the Quarkus Maven plugin</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Then you would be able to use Maven to build and deploy your application to App Engine via <code>mvn clean package appengine:deploy</code>.</p>
@@ -461,8 +474,8 @@ build your Dockerfile and launch it on App Engine Flexible custom runtime.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-App Engine Flexible custom runtimes support <a href="https://cloud.google.com/appengine/docs/flexible/custom-runtimes/configuring-your-app-with-app-yaml#updated_health_checks">health checks</a>,
-it is strongly advised to provide them thanks to Quarkus <a href="microprofile-health">Microprofile Health</a> support.
+App Engine Flexible custom runtimes support <a href="https://cloud.google.com/appengine/docs/flexible/reference/app-yaml?tab=java#updated_health_checks">health checks</a>,
+it is strongly advised to provide them thanks to Quarkus <a href="smallrye-health">Smallrye Health</a> support.
 </td>
 </tr>
 </table>
@@ -558,15 +571,28 @@ You can also build your image locally and push it to a publicly accessible Docke
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell script hljs" data-lang="shell script">gcloud run deploy --image gcr.io/PROJECT-ID/helloworld --platform managed</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell script hljs" data-lang="shell script">gcloud run deploy --image gcr.io/PROJECT-ID/helloworld</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Cloud run will ask you questions on the service name, the region and whether or not unauthenticated calls are allowed.
+<p>Cloud run will ask you questions on the service name, the region and whether unauthenticated calls are allowed.
 After you answer to these questions, it will deploy your application.</p>
 </div>
 <div class="paragraph">
 <p>When the deployment is done, the output will display the URL to access your application.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Cloud Run supports <a href="https://cloud.google.com/run/docs/configuring/healthchecks">health checks</a>,
+it is strongly advised to provide them thanks to Quarkus <a href="smallrye-health">Smallrye Health</a> support.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -601,46 +627,28 @@ For PostgreSQL you will need to include the following dependency:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">quarkus.datasource.db-kind=other <i class="conum" data-value="1"></i><b>(1)</b>
-quarkus.datasource.jdbc.url=jdbc:postgresql:///mydatabase <i class="conum" data-value="2"></i><b>(2)</b>
-quarkus.datasource.jdbc.driver=org.postgresql.Driver
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">quarkus.datasource.db-kind=postgresql
+quarkus.datasource.jdbc.url=jdbc:postgresql:///mydatabase <i class="conum" data-value="1"></i><b>(1)</b>
 quarkus.datasource.username=quarkus
 quarkus.datasource.password=quarkus
-quarkus.datasource.jdbc.additional-jdbc-properties.cloudSqlInstance=project-id:gcp-region:instance <i class="conum" data-value="3"></i><b>(3)</b>
-quarkus.datasource.jdbc.additional-jdbc-properties.socketFactory=com.google.cloud.sql.postgres.SocketFactory <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
+quarkus.datasource.jdbc.additional-jdbc-properties.cloudSqlInstance=project-id:gcp-region:instance <i class="conum" data-value="2"></i><b>(2)</b>
+quarkus.datasource.jdbc.additional-jdbc-properties.socketFactory=com.google.cloud.sql.postgres.SocketFactory <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Database kind must be 'other' as we need to skip Quarkus auto-configuration.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
 <td>The JDBC URL should not include the hostname / IP of the database.</td>
 </tr>
 <tr>
-<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
 <td>We add the <code>cloudSqlInstance</code> additional JDBC property to configure the instance id.</td>
 </tr>
 <tr>
-<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
 <td>We add the <code>socketFactory</code> additional JDBC property to configure the socket factory used to connect to Cloud SQL,
 this one is coming from the <code>postgres-socket-factory</code> dependency.</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If you use Hibernate ORM, you also need to configure <code>quarkus.hibernate-orm.dialect=org.hibernate.dialect.PostgreSQL10Dialect</code>
-as Hibernate ORM would not be able to automatically detect the dialect of your database.
-</td>
 </tr>
 </table>
 </div>
@@ -696,6 +704,17 @@ This only works when your application is running inside a Google Cloud managed r
 </table>
 </div>
 </div>
+<div class="sect2">
+<h3 id="using-cloud-sql-with-native-executables"><a class="anchor" href="#using-cloud-sql-with-native-executables"></a>Using Cloud SQL with native executables</h3>
+<div class="paragraph">
+<p>When generating native executables, you must also mark <code>jnr.ffi.provider.jffi.NativeFinalizer$SingletonHolder</code> as runtime initialized.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">quarkus.native.additional-build-args=--initialize-at-run-time=jnr.ffi.provider.jffi.NativeFinalizer$SingletonHolder</code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -706,13 +725,105 @@ This only works when your application is running inside a Google Cloud managed r
 including PubSub, BigQuery, Storage, Spanner, Firestore, Secret Manager (visit the repository for an accurate list of supported services).</p>
 </div>
 <div class="paragraph">
-<p>You can find some documentation about them in the <a href="https://github.com/quarkiverse/quarkiverse-google-cloud-services">Quarkiverse Google Cloud Services repository</a>.</p>
+<p>You can find some documentation about them in the <a href="https://quarkiverse.github.io/quarkiverse-docs/quarkus-google-cloud-services/main/index.html">Quarkiverse Google Cloud Services documentation</a>.</p>
 </div>
 </div>
 </div>
     </div>
+    <div class="grid__item width-4-12 width-12-12-m tocwrapper">
+      <div class="hide-mobile toc"><ul class="sectlevel1">
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#login-to-google-cloud">Login to Google Cloud</a></li>
+<li><a href="#deploying-to-google-cloud-functions">Deploying to Google Cloud Functions</a></li>
+<li><a href="#deploying-to-google-app-engine-standard">Deploying to Google App Engine Standard</a>
+<ul class="sectlevel2">
+<li><a href="#building-the-application-manually">Building the application manually</a></li>
+<li><a href="#building-the-application-via-gcloud">Building the application via gcloud</a></li>
+<li><a href="#building-the-application-via-the-google-cloud-maven-plugin">Building the application via the Google Cloud Maven plugin</a></li>
+</ul>
+</li>
+<li><a href="#deploying-to-google-app-engine-flexible-custom-runtimes">Deploying to Google App Engine Flexible Custom Runtimes</a></li>
+<li><a href="#deploying-to-google-cloud-run">Deploying to Google Cloud Run</a></li>
+<li><a href="#using-cloud-sql">Using Cloud SQL</a>
+<ul class="sectlevel2">
+<li><a href="#using-cloud-sql-with-a-jdbc-driver">Using Cloud SQL with a JDBC driver</a></li>
+<li><a href="#using-cloud-sql-with-a-reactive-sql-client">Using Cloud SQL with a reactive SQL client</a></li>
+<li><a href="#using-cloud-sql-with-native-executables">Using Cloud SQL with native executables</a></li>
+</ul>
+</li>
+<li><a href="#going-further">Going further</a></li>
+</ul></div>
+    </div>
   </div>
-</div>
+  <h2>Related content</h2>
+  <div class="grid-wrapper relations">
+    <div class="grid__item width-6-12 width-12-12-m">
+      <h3>On the same topics</h3>
+      <ul class="related-content">
+      
+        
+        <li class="guide"><a href="/version/main/guides/deploying-to-openshift">Deploying on OpenShift</a></li>
+      
+        
+        <li class="guide"><a href="/version/main/guides/deploying-to-heroku">Deploying to Heroku</a></li>
+      
+        
+        <li class="guide"><a href="/version/main/guides/deploying-to-azure-cloud">Deploying to Microsoft Azure Cloud</a></li>
+      
+        
+        <li class="guide"><a href="/version/main/guides/funqy-gcp-functions">Funqy Google Cloud Functions</a></li>
+      
+        
+        <li class="guide"><a href="/version/main/guides/funqy-gcp-functions-http">Funqy HTTP Binding with Google Cloud Functions</a></li>
+      
+        
+        <li class="guide"><a href="/version/main/guides/gcp-functions">Google Cloud Functions (Serverless)</a></li>
+      
+        
+        <li class="guide"><a href="/version/main/guides/gcp-functions-http">Google Cloud Functions (Serverless) with Quarkus REST, Undertow, or Reactive Routes</a></li>
+      
+        
+        <li class="guide"><a href="/version/main/guides/deploying-to-kubernetes">Kubernetes extension</a></li>
+      
+        
+        <li class="guide"><a href="/version/main/guides/container-image">Container Images</a></li>
+      
+        
+        <li class="guide"><a href="/version/main/guides/ansible">Automate Quarkus deployment with Ansible</a></li>
+      
+        
+        <li class="guide"><a href="/version/main/guides/aws-lambda">AWS Lambda</a></li>
+      
+        
+        <li class="guide"><a href="/version/main/guides/aws-lambda-snapstart">AWS Lambda SnapStart Configuration</a></li>
+      
+        
+        <li class="guide"><a href="/version/main/guides/aws-lambda-http">AWS Lambda with Quarkus REST, Undertow, or Reactive Routes</a></li>
+      
+        
+        <li class="guide"><a href="/version/main/guides/azure-functions">Azure Functions</a></li>
+      
+        
+        <li class="guide"><a href="/version/main/guides/azure-functions-http">Azure Functions with Quarkus REST, Undertow, or Reactive Routes</a></li>
+      
+        
+        <li class="concepts"><a href="/version/main/guides/security-openid-connect-providers">Configuring Well-Known OpenID Connect Providers</a></li>
+      
+        
+        <li class="guide"><a href="/version/main/guides/funqy">Funqy</a></li>
+      
+        
+        <li class="guide"><a href="/version/main/guides/funqy-aws-lambda">Funqy AWS Lambda Binding</a></li>
+      
+        
+        <li class="guide"><a href="/version/main/guides/funqy-http">Funqy HTTP Binding (Standalone)</a></li>
+      
+        
+        <li class="guide"><a href="/version/main/guides/funqy-aws-lambda-http">Funqy HTTP Binding with AWS Lambda </a></li>
+      </ul>
+    </div>
+    </div>
+  </div>
 
   </div>
 
@@ -730,23 +841,45 @@ including PubSub, BigQuery, Storage, Spanner, Firestore, Secret Manager (visit t
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="/publications">Publications</a></li>
           
-            <li><a href="/awards">Awards</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
+          
+          
+            <li><a href="/usage" target="_blank">Usage</a></li>
+          
+          
+          
+            <li><a href="/brand" target="_blank">Brand</a></li>
+          
           
         </ul>
       </div>
@@ -755,15 +888,29 @@ including PubSub, BigQuery, Storage, Spanner, Firestore, Secret Manager (visit t
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -772,19 +919,60 @@ including PubSub, BigQuery, Storage, Spanner, Firestore, Secret Manager (visit t
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
+          
+        </ul>
+      </div>
+    
+      <div class="width-1-12 project-links">
+        <span>Languages</span>
+        <ul class="footer-links">
+          
+          
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
+          
+          
+          
+            <li><a href="https://pt.quarkus.io/" target="_blank">Português(Brasileiro)</a></li>
+          
+          
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -795,21 +983,21 @@ including PubSub, BigQuery, Storage, Spanner, Firestore, Secret Manager (visit t
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>
@@ -837,12 +1025,12 @@ including PubSub, BigQuery, Storage, Spanner, Firestore, Secret Manager (visit t
   <script type="text/javascript" src="/assets/javascript/scroll-down.js"></script>
   <script src="/assets/javascript/satellite.js" type="text/javascript"></script>
   <script src="/guides/javascript/config.js" type="text/javascript"></script>
-  <script src="/assets/javascript/search-filter.js" type="text/javascript"></script>
   <script src="/assets/javascript/guides-version-dropdown.js" type="text/javascript"></script>
   <script src="/assets/javascript/back-to-top.js" type="text/javascript"></script>
   <script src="/assets/javascript/clipboard.min.js" type="text/javascript"></script>
   <script src="/assets/javascript/copy.js" type="text/javascript"></script>
   <script src="/assets/javascript/asciidoc-tabs.js" type="text/javascript"></script>
+  <script src="/assets/javascript/future-date.js" type="text/javascript"></script>
 </body>
 
 </html>
